@@ -21,6 +21,8 @@ public class APIIntrospectHandler extends AbstractHandler {
 
     @Override
     public boolean handleRequest(MessageContext mc) {
+        Utils.handleUnsupportedContentType(mc);
+
         org.apache.axis2.context.MessageContext axis2MessageContext = ((Axis2MessageContext) mc).getAxis2MessageContext();
 
         SourceRequest sourceRequest = (SourceRequest) axis2MessageContext.getProperty(IntrospectConstants.SOURCE_REQUEST_KEY);
@@ -66,6 +68,8 @@ public class APIIntrospectHandler extends AbstractHandler {
 
     @Override
     public boolean handleResponse(MessageContext mc) {
+        Utils.handleUnsupportedContentType(mc);
+
         if (null != mc.getProperty(IntrospectConstants.INTROSPECT_PROPERTY)) {
             org.apache.axis2.context.MessageContext axis2MessageContext = ((Axis2MessageContext) mc).getAxis2MessageContext();
 

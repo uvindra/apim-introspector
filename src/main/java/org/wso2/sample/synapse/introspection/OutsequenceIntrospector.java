@@ -68,6 +68,8 @@ public class OutsequenceIntrospector extends AbstractMediator {
             log.info(logIDString + IntrospectConstants.LOG_GATEWAY_TO_CLIENT_DIRECTION);
         }
 
+        Utils.restoreOriginalContentType(mc);
+
         return true;
     }
 }

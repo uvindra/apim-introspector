@@ -84,6 +84,8 @@ public class InsequenceIntrospector extends AbstractMediator {
             log.info(logIDString + IntrospectConstants.LOG_GATEWAY_TO_BACKEND_DIRECTION);
         }
 
+        Utils.restoreOriginalContentType(mc);
+
         return true;
     }
 
